@@ -1,11 +1,10 @@
 import java.util.Arrays;
 
 public class Game {
-    static boolean isGreenLight = false;
 
     public static int firstMethod(int[] game) {
         int x = 0;
-        if (!isGreenLight) {
+        if (!Main.isGreenLight) {
             for (int speed : game) {
                 if (speed > 0) {
                     x++;
@@ -26,7 +25,7 @@ public class Game {
         }
         int[] speed = new int[x];
         int[] speed2 = {};
-        if (!isGreenLight) {
+        if (!Main.isGreenLight) {
             for (int i = 0, p = 0; i < game.length; i++) {
                 if (game[i] > 0) {
                     speed[p] = game[i];
@@ -48,7 +47,7 @@ public class Game {
             }
         }
 
-        if (!isGreenLight) {
+        if (!Main.isGreenLight) {
             int[] speed = new int[x];
             for (int i = 0, p = 0; i < game.length; i++) {
                 if (game[i] <= 0) {

@@ -4,22 +4,18 @@ import org.junit.jupiter.api.Test;
 public class GameTest {
     @Test
 
-    public void shouldFindLoseIfGreenLight() {
+    public void shouldFindLose() {
 
         int[] arr = {5, 0, 9, 7, 0, 6};
         int actual = Game.firstMethod(arr);
-        int expected = 0;
-        Assertions.assertEquals(expected, actual, "Если isGreenLight=true");
+        int expected;
+        if (!Main.isGreenLight) {
+            expected = 4;
+        } else {
+            expected = 0;
+        }
+        Assertions.assertEquals(expected, actual);
     }
-
-    @Test
-    public void shouldFindLoseIfNoGreenLight() {
-        int[] arr = {5, 0, 9, 7, 0, 6};
-        int actual = Game.firstMethod(arr);
-        int expected = 4;
-        Assertions.assertEquals(expected, actual, "Если isGreenLight=false");
-    }
-
 
     @Test
     public void shouldFindSpeedLoseIfGreenLight() {
